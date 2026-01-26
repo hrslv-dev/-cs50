@@ -26,5 +26,4 @@ float avg(int arr[], int size){
 	float avarege = sum/(float) size; 
 	return avarege; 
 }
-// DEBUG THIS CODE TO UNDERSTAND WHAT's WRONG
 
