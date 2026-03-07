@@ -1,37 +1,52 @@
 #include <stdio.h>
-#include <stdbool.h> 
+#include <stdbool.h>
 
-bool binary_search(int arr[],int length, int goal); 
+int binary_search(int arr[], int length, int goal);
 
-int main(void){
-    int arr[] = {2,7,4,9,10,12,17,50,20}; 
-    int length = sizeof(arr) / sizeof(arr[0]); 
-    int goal = 50; 
+// Para busca binária precisa do array estar ordenado com os número de forma crescente ou decrescente. 
+// Então tecnicamente ela só serve para arrays númericos. E ordenados 
 
-    bool result = binary_search(arr, length, goal); 
-    if(result == true){ 
-        printf("finded!");
-    } else { 
-        pritnf("Not finded!"); 
+
+// Deve funcionar bem com um algoritmo de sorting (ordenação)
+
+int main(void)
+{
+    int arr[] = {2, 7, 4, 9, 10, 50, 70, 80, 90, 100, 123, 111};
+    int length = sizeof(arr) / sizeof(arr[0]);
+    int goal = 50;
+
+    int result = binary_search(arr, length, goal);
+    if (result != 1)
+    {
+        printf("finded! The number of the position is : %i \n ",result);
     }
-    
- }
-
-bool binary_search(int arr[],int length, int goal){ 
-    int menor = 0; 
-    int maior = length; 
-    int steps = 0;  
-    while(menor <= maior){ 
-        int middle = (menor + maior)/ 2; 
-        if (middle == goal){ 
-            return true; 
-        } else if (middle > goal){ 
-            maior = middle - 1; 
-        } else if (middle < goal){ 
-            menor = middle + 1; 
-        } 
-        // DEBBUGING FEATURE 
-        steps++; 
+    else
+    {
+        printf("Not finded!");
     }
-    return false;
+}
+int binary_search(int arr[], int length, int goal)
+{
+    int menor = 0;
+    int maior = length -1;
+    int steps = 0;
+    while (menor <= maior)
+    {
+        int middle = (menor + maior) / 2;
+        if (arr[middle] == goal)
+        {
+            return middle;
+        }
+        else if (arr[middle] > goal)
+        {
+            maior = middle - 1;
+        }
+        else if (arr[middle]< goal)
+        {
+            menor = middle + 1;
+        }
+        // DEBBUGING FEATURE
+        steps++;
+    }
+    return 1;
 }
