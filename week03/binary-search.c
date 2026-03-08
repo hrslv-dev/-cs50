@@ -3,9 +3,8 @@
 
 int binary_search(int arr[], int length, int goal);
 
-// Para busca binária precisa do array estar ordenado com os número de forma crescente ou decrescente. 
-// Então tecnicamente ela só serve para arrays númericos. E ordenados 
-
+// Para busca binária precisa do array estar ordenado com os número de forma crescente ou decrescente.
+// Então tecnicamente ela só serve para arrays númericos. E ordenados
 
 // Deve funcionar bem com um algoritmo de sorting (ordenação)
 
@@ -18,7 +17,7 @@ int main(void)
     int result = binary_search(arr, length, goal);
     if (result != 1)
     {
-        printf("finded! The number of the position is : %i \n ",result);
+        printf("finded! The number of the position is : %i \n ", result);
     }
     else
     {
@@ -28,7 +27,7 @@ int main(void)
 int binary_search(int arr[], int length, int goal)
 {
     int menor = 0;
-    int maior = length -1;
+    int maior = length - 1;
     int steps = 0;
     while (menor <= maior)
     {
@@ -41,7 +40,7 @@ int binary_search(int arr[], int length, int goal)
         {
             maior = middle - 1;
         }
-        else if (arr[middle]< goal)
+        else if (arr[middle] < goal)
         {
             menor = middle + 1;
         }
