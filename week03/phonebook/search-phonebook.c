@@ -8,7 +8,7 @@ struct person{
     string number; 
     string name; 
     int id; 
-}
+};
 
 /*Function that creates an entity*/
 
