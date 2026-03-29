@@ -19,7 +19,7 @@ struct person createPerson(int id, string name, string number){
     p.name = name; 
     p.number = number; 
 
-    return p; 
+    return p;
 }
 
 /*Function that makes the search
